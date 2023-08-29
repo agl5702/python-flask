@@ -20,9 +20,10 @@ def HolaFlask():
 
 
 
-
-
-
+def notas(nota1=0,nota2=0,nota3=0):
+    resultado=(nota1*30)/100+(nota2*30)/100+(nota3*40)/100
+    return f"<h1> El resultado es: {resultado}</h1> <hr>"
+    
 def edades(edad=0):
     if edad <18:
         r= "Menor de edad"
@@ -31,10 +32,6 @@ def edades(edad=0):
     else:
         r="Adulto mayor"
     return f"<h1> La persona es : {r} </h1> <hr>"
-def notas(nota1=0,nota2=0,nota3=0):
-    resultado=(nota1*30)/100+(nota2*30)/100+(nota3*40)/100
-    return f"<h1> El resultado es: {resultado}</h1> <hr>"
-    
 
 def arreglos(valores=0, columnas=0, filas=0):
     if filas == 0:
