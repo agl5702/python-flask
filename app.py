@@ -1,5 +1,5 @@
 #Importamos flask
-from flask import Flask, jsonify
+from flask import Flask
 from flask_cors import CORS
 import numpy as np
 
@@ -23,7 +23,7 @@ def HolaFlask():
 @app.route("/notas/<float:nota1>/<float:nota2>/<float:nota3>")
 def notas(nota1=0,nota2=0,nota3=0):
     resultado=(nota1*30)/100+(nota2*30)/100+(nota3*40)/100
-    return jsonify({"resultado": resultado})
+    return f"<h1>resultado: {resultado} </h1>"
 
 
 
@@ -36,7 +36,7 @@ def edades(edad=0):
         r="Adulto"
     else:
         r="Adulto mayor"
-    return jsonify({"resultado": r})
+    return f" <h1>resultado: {r} </h1>"
 
 
 
@@ -49,7 +49,7 @@ def arreglos(valores=0, columnas=0, filas=0):
     else:
         arreglo = np.random.randint(valores, size=(filas, columnas))
         
-    return jsonify({"arreglo": arreglo.tolist()})
+    return f"<h1>arreglo: {arreglo.tolist()} </h1>"
 
 
 
